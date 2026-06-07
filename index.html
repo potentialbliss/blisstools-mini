@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bliss Tools — Mini</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="wordmark">Bliss Tools <span>/ Mini</span></div>
+    <h1>Posting Schedule</h1>
+    <div class="subtitle">Set it once. It handles the rest.</div>
+  </div>
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="status-label">Status</div>
+      <div class="status-value green" id="status-text">
+        <span class="status-dot" id="status-dot"></span>Active
+      </div>
+    </div>
+    <div class="status-divider"></div>
+    <div class="status-item">
+      <div class="status-label">Active tabs</div>
+      <div class="status-value" id="active-tabs-stat">—</div>
+    </div>
+    <div class="status-divider"></div>
+    <div class="status-item">
+      <div class="status-label">Next post</div>
+      <div class="status-value dim" id="next-post-stat">—</div>
+    </div>
+  </div>
+
+  <!-- Auto-post toggle -->
+  <div class="toggle-row" role="switch" aria-checked="true" tabindex="0" onclick="toggleEnabled()" onkeydown="handleToggleKeydown(event)">
+    <div class="toggle-label"><strong>Auto-posting</strong> — posts one file per scheduled slot</div>
+    <div class="toggle-switch on" id="toggle-switch">
+      <div class="toggle-knob"></div>
+    </div>
+  </div>
+
+  <!-- Tab nav -->
+  <div class="tab-nav" role="tablist">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-reels-shorts" onclick="switchTab('reels-shorts', this)">
+      Reels + Shorts
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-stories" onclick="switchTab('stories', this)">
+      Stories
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-feed" onclick="switchTab('feed', this)">
+      Feed
+    </button>
+    <button class="tab-btn coming-soon" role="tab" aria-selected="false" aria-disabled="true" disabled>
+      TikTok
+      <span class="tab-soon-badge">soon</span>
+    </button>
+  </div>
+
+  <!-- Tab panels container -->
+  <div id="tab-panels"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
